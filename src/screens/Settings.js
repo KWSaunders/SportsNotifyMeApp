@@ -87,13 +87,13 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   txt_notification: {
-    color: '#819298',
+    color: '#FF0000',
     fontSize: 30,
     fontWeight: 'bold',
     marginTop: 50
   },
   txt_notifi_start: {
-    color: '#819298',
+    color: '#FF0000',
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 20

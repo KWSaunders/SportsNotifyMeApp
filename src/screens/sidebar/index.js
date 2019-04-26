@@ -54,7 +54,7 @@ class SideBar extends Component {
             style={{flex: 1, top: 0}}
           >
             <View
-              style={{backgroundColor: '#788b91', width: '100%', height: 150, marginBottom:40}}
+              style={{backgroundColor: '#ff0000', width: '100%', height: 150, marginBottom:40}}
             />
 
             <List

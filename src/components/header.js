@@ -38,7 +38,7 @@ class Topbar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#788b91',
+    backgroundColor: '#FF0000',
     width: '100%',
     height: Platform.OS === 'ios' ? 73 : 50,
     alignItems: 'center',
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   content: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#788b91',
+    backgroundColor: '#FF0000',
     width: '100%',
     height: Platform.OS === 'ios' ? 60 : 55,
     paddingLeft: 10,

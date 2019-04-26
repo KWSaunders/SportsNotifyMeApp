@@ -26,7 +26,7 @@ class Transaction extends Component {
         const games = responseJson.games;
         /*const filterGames = [];
         games.forEach((game) => {
-          if (this.state.followedTeams[game.team1] || this.state.followedTeams[game.team2]) {
+          if (this.state.followedTeams[game.away] || this.state.followedTeams[game.home]) {
             filterGames.push(game);
           }
         });*/
@@ -86,13 +86,17 @@ class Transaction extends Component {
                       <Text style={styles.team_score}>{game.away_score}</Text>
                       <Text style={styles.team_score}>{game.home_score}</Text>
                     </View>
+		    <View style={styles.team_name}>
+			<Text>{game.time}</Text>
+		    </View>
 
                   </View>
                 )
               } else {
                 return (
                   <View style={styles.item}>
-                    <Text style={styles.team_name}>{game.title}</Text>
+                    <Text style={styles.team_name}>{game.away} vs {game.home}</Text>
+		    <Text style={styles.team_name}>{game.time}</Text>
                   </View>
                 )
               }
@@ -188,4 +192,4 @@ const styles = StyleSheet.create({
 
   }
 });
-export default Transaction;                                             
+export default Transaction;                                            

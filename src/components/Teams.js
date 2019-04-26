@@ -60,23 +60,16 @@ class Transaction extends Component {
           {
             this.state.teams.map((team, i) => (
               <View style={styles.item}>
-                <Image style={styles.icon} source={uri: 'https://wfs.sbcc.edu/student/kwsaunders/web/nba/' + team.name + '.png'}/> 
+                <Image style={styles.icon} source={{uri: 'https://wfs.sbcc.edu/student/kwsaunders/web/nba/' + team.name + '.png'}}/> 
                 <Text style={styles.team_name}>{team.name}</Text>
-                <Button
+                <Button 
                   containerViewStyle={{position:'absolute',right:0}}
                   onPress={() => {
                     this.updateTeamFollowing(team.name, this.state.followedTeams[team.name]);
                   }}
-                  title={this.state.followedTeams[team.name] === true ? "Unfollow" : "Follow"}
-                  buttonStyle={{
-                    right:0,
-                    backgroundColor: "#788b91",
-                    width: 100,
-                    height: 40,
-                    borderColor: "transparent",
-                    borderWidth: 0,
-                    borderRadius: 5
-                  }}
+                  title={this.state.followedTeams[team.name] === true ? "Following" : "Follow"}
+		  buttonStyle={this.state.followedTeams[team.name] === true ? styles.following : styles.follow}
+		color={this.state.followedTeams[team.name] === true ? "#000000" : "#FFFFFF"}
                 />
               </View>
             ))
@@ -96,6 +89,26 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  follow: {
+    right:0,
+    backgroundColor: "#3897f0",
+    width: 100,
+    height: 50,
+    borderColor: "transparent",
+    borderWidth: 1,
+    borderRadius: 5,
+    fontWeight: '600',
+  },
+  following: {
+    right:0,
+    backgroundColor: "#FFFFFF",
+    width: 100,
+    height: 50,
+    borderColor: "#000000",
+    borderWidth: 1,
+    borderRadius: 5,
+    fontWeight: '600',
+  },
   container: {
     flex: 1,
     justifyContent: 'flex-start',
@@ -105,8 +118,8 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   icon: {
-    width: 100,
-    height: 50,
+    width: 48,
+    height: 48,
   },
   centerText: {
     flex: 1,
